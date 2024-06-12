@@ -1,0 +1,9 @@
+Determining if the prototype gethostbyname_r exists for EVENT__HAVE_GETHOSTBYNAME_R_6_ARG passed with the following output:
+Change Dir: '/home/zhuchenlei/db/db_impl_course/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /home/zhuchenlei/clion-2023.3.4/bin/ninja/linux/x64/ninja -v cmTC_be993
+[1/2] /usr/bin/cc -D_GNU_SOURCE  -Wall -DCMAKE_EXPORT_COMPILE_COMMANDS=1  -O2 -g  -fdiagnostics-color=always -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Wnormalized=id -Woverride-init -Wlogical-op -Wwrite-strings  -fdiagnostics-color=always -o CMakeFiles/cmTC_be993.dir/CheckPrototypeDefinition.c.o -c /home/zhuchenlei/db/db_impl_course/cmake-build-debug/CMakeFiles/CMakeTmp/CheckPrototypeDefinition.c
+[2/2] : && /usr/bin/cc -Wall -DCMAKE_EXPORT_COMPILE_COMMANDS=1  -O2 -g  -fdiagnostics-color=always -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Wnormalized=id -Woverride-init -Wlogical-op -Wwrite-strings -rdynamic CMakeFiles/cmTC_be993.dir/CheckPrototypeDefinition.c.o -o cmTC_be993   && :
+
+
+

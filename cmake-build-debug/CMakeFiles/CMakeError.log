@@ -1,0 +1,117 @@
+Determining if the prototype gethostbyname_r exists for EVENT__HAVE_GETHOSTBYNAME_R_3_ARG failed with the following output:
+Change Dir: '/home/zhuchenlei/db/db_impl_course/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /home/zhuchenlei/clion-2023.3.4/bin/ninja/linux/x64/ninja -v cmTC_3c336
+[1/2] /usr/bin/cc -D_GNU_SOURCE  -Wall -DCMAKE_EXPORT_COMPILE_COMMANDS=1  -O2 -g  -fdiagnostics-color=always -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Wnormalized=id -Woverride-init -Wlogical-op -Wwrite-strings  -fdiagnostics-color=always -o CMakeFiles/cmTC_3c336.dir/CheckPrototypeDefinition.c.o -c /home/zhuchenlei/db/db_impl_course/cmake-build-debug/CMakeFiles/CMakeTmp/CheckPrototypeDefinition.c
+FAILED: CMakeFiles/cmTC_3c336.dir/CheckPrototypeDefinition.c.o 
+/usr/bin/cc -D_GNU_SOURCE  -Wall -DCMAKE_EXPORT_COMPILE_COMMANDS=1  -O2 -g  -fdiagnostics-color=always -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Wnormalized=id -Woverride-init -Wlogical-op -Wwrite-strings  -fdiagnostics-color=always -o CMakeFiles/cmTC_3c336.dir/CheckPrototypeDefinition.c.o -c /home/zhuchenlei/db/db_impl_course/cmake-build-debug/CMakeFiles/CMakeTmp/CheckPrototypeDefinition.c
+/home/zhuchenlei/db/db_impl_course/cmake-build-debug/CMakeFiles/CMakeTmp/CheckPrototypeDefinition.c:14:66: warning: ‘struct hostent_data’ declared inside parameter list will not be visible outside of this definition or declaration
+   14 | int gethostbyname_r(const char *name, struct hostent *hp, struct hostent_data *hdata) {
+      |                                                                  ^~~~~~~~~~~~
+/home/zhuchenlei/db/db_impl_course/cmake-build-debug/CMakeFiles/CMakeTmp/CheckPrototypeDefinition.c:14:5: error: conflicting types for ‘gethostbyname_r’; have ‘int(const char *, struct hostent *, struct hostent_data *)’
+   14 | int gethostbyname_r(const char *name, struct hostent *hp, struct hostent_data *hdata) {
+      |     ^~~~~~~~~~~~~~~
+In file included from /home/zhuchenlei/db/db_impl_course/cmake-build-debug/CMakeFiles/CMakeTmp/CheckPrototypeDefinition.c:1:
+/usr/include/netdb.h:177:12: note: previous declaration of ‘gethostbyname_r’ with type ‘int(const char * restrict,  struct hostent * restrict,  char * restrict,  size_t,  struct hostent ** restrict,  int * restrict)’ {aka ‘int(const char * restrict,  struct hostent * restrict,  char * restrict,  long unsigned int,  struct hostent ** restrict,  int * restrict)’}
+  177 | extern int gethostbyname_r (const char *__restrict __name,
+      |            ^~~~~~~~~~~~~~~
+ninja: build stopped: subcommand failed.
+
+
+
+#include <netdb.h>
+
+
+static void cmakeRequireSymbol(int dummy, ...) {
+  (void) dummy;
+}
+
+static void checkSymbol(void) {
+#ifndef gethostbyname_r
+  cmakeRequireSymbol(0, &gethostbyname_r);
+#endif
+}
+
+int gethostbyname_r(const char *name, struct hostent *hp, struct hostent_data *hdata) {
+  return 0;
+}
+
+#ifdef __CLASSIC_C__
+int main() {
+  int ac;
+  char*av[];
+#else
+int main(int ac, char *av[]) {
+#endif
+  checkSymbol();
+  if (ac > 1000) {
+    return *av[0];
+  }
+  return 0;
+}
+
+
+Determining if the prototype gethostbyname_r exists for EVENT__HAVE_GETHOSTBYNAME_R_5_ARG failed with the following output:
+Change Dir: '/home/zhuchenlei/db/db_impl_course/cmake-build-debug/CMakeFiles/CMakeTmp'
+
+Run Build Command(s): /home/zhuchenlei/clion-2023.3.4/bin/ninja/linux/x64/ninja -v cmTC_611e0
+[1/2] /usr/bin/cc -D_GNU_SOURCE  -Wall -DCMAKE_EXPORT_COMPILE_COMMANDS=1  -O2 -g  -fdiagnostics-color=always -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Wnormalized=id -Woverride-init -Wlogical-op -Wwrite-strings  -fdiagnostics-color=always -o CMakeFiles/cmTC_611e0.dir/CheckPrototypeDefinition.c.o -c /home/zhuchenlei/db/db_impl_course/cmake-build-debug/CMakeFiles/CMakeTmp/CheckPrototypeDefinition.c
+FAILED: CMakeFiles/cmTC_611e0.dir/CheckPrototypeDefinition.c.o 
+/usr/bin/cc -D_GNU_SOURCE  -Wall -DCMAKE_EXPORT_COMPILE_COMMANDS=1  -O2 -g  -fdiagnostics-color=always -Wall -Wextra -Wno-unused-parameter -Wstrict-aliasing -Wstrict-prototypes -fno-strict-aliasing -Wmissing-prototypes -Winit-self -Wmissing-field-initializers -Wdeclaration-after-statement -Waddress -Wnormalized=id -Woverride-init -Wlogical-op -Wwrite-strings  -fdiagnostics-color=always -o CMakeFiles/cmTC_611e0.dir/CheckPrototypeDefinition.c.o -c /home/zhuchenlei/db/db_impl_course/cmake-build-debug/CMakeFiles/CMakeTmp/CheckPrototypeDefinition.c
+/home/zhuchenlei/db/db_impl_course/cmake-build-debug/CMakeFiles/CMakeTmp/CheckPrototypeDefinition.c:14:17: error: conflicting types for ‘gethostbyname_r’; have ‘struct hostent *(const char *, struct hostent *, char *, size_t,  int *)’ {aka ‘struct hostent *(const char *, struct hostent *, char *, long unsigned int,  int *)’}
+   14 | struct hostent *gethostbyname_r(const char *name, struct hostent *hp, char *buf, size_t buflen, int *herr) {
+      |                 ^~~~~~~~~~~~~~~
+In file included from /home/zhuchenlei/db/db_impl_course/cmake-build-debug/CMakeFiles/CMakeTmp/CheckPrototypeDefinition.c:1:
+/usr/include/netdb.h:177:12: note: previous declaration of ‘gethostbyname_r’ with type ‘int(const char * restrict,  struct hostent * restrict,  char * restrict,  size_t,  struct hostent ** restrict,  int * restrict)’ {aka ‘int(const char * restrict,  struct hostent * restrict,  char * restrict,  long unsigned int,  struct hostent ** restrict,  int * restrict)’}
+  177 | extern int gethostbyname_r (const char *__restrict __name,
+      |            ^~~~~~~~~~~~~~~
+/home/zhuchenlei/db/db_impl_course/cmake-build-debug/CMakeFiles/CMakeTmp/CheckPrototypeDefinition.c: In function ‘gethostbyname_r’:
+/home/zhuchenlei/db/db_impl_course/cmake-build-debug/CMakeFiles/CMakeTmp/CheckPrototypeDefinition.c:15:10: error: ‘NULL’ undeclared (first use in this function)
+   15 |   return NULL;
+      |          ^~~~
+/home/zhuchenlei/db/db_impl_course/cmake-build-debug/CMakeFiles/CMakeTmp/CheckPrototypeDefinition.c:2:1: note: ‘NULL’ is defined in header ‘<stddef.h>’; did you forget to ‘#include <stddef.h>’?
+    1 | #include <netdb.h>
+  +++ |+#include <stddef.h>
+    2 | 
+/home/zhuchenlei/db/db_impl_course/cmake-build-debug/CMakeFiles/CMakeTmp/CheckPrototypeDefinition.c:15:10: note: each undeclared identifier is reported only once for each function it appears in
+   15 |   return NULL;
+      |          ^~~~
+/home/zhuchenlei/db/db_impl_course/cmake-build-debug/CMakeFiles/CMakeTmp/CheckPrototypeDefinition.c:16:1: warning: control reaches end of non-void function [-Wreturn-type]
+   16 | }
+      | ^
+ninja: build stopped: subcommand failed.
+
+
+
+#include <netdb.h>
+
+
+static void cmakeRequireSymbol(int dummy, ...) {
+  (void) dummy;
+}
+
+static void checkSymbol(void) {
+#ifndef gethostbyname_r
+  cmakeRequireSymbol(0, &gethostbyname_r);
+#endif
+}
+
+struct hostent *gethostbyname_r(const char *name, struct hostent *hp, char *buf, size_t buflen, int *herr) {
+  return NULL;
+}
+
+#ifdef __CLASSIC_C__
+int main() {
+  int ac;
+  char*av[];
+#else
+int main(int ac, char *av[]) {
+#endif
+  checkSymbol();
+  if (ac > 1000) {
+    return *av[0];
+  }
+  return 0;
+}
+
+

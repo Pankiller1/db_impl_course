@@ -1,0 +1,5 @@
+if(EXISTS "/home/zhuchenlei/db/db_impl_course/cmake-build-debug/unitest/mem_pool_test[1]_tests.cmake")
+  include("/home/zhuchenlei/db/db_impl_course/cmake-build-debug/unitest/mem_pool_test[1]_tests.cmake")
+else()
+  add_test(mem_pool_test_NOT_BUILT mem_pool_test_NOT_BUILT)
+endif()

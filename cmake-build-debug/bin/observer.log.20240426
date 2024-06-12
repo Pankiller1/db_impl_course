@@ -1,0 +1,149 @@
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: init.cpp init 205]>>Output configuration 
+Begin dump configuration
+[]
+
+[DefaultStorageStage]
+BaseDir=./miniob
+SystemDb=sys
+ThreadId=IOThreads
+
+[DefaultThreads]
+count=3
+
+[ExecuteStage]
+NextStages=DefaultStorageStage,MemStorageStage
+ThreadId=SQLThreads
+
+[IOThreads]
+count=3
+
+[LOG]
+LOG_CONSOLE_LEVEL=1
+LOG_FILE_LEVEL=3
+LOG_FILE_NAME=observer.log
+
+[MemStorageStage]
+ThreadId=IOThreads
+
+[MetricsStage]
+NextStages=TimerStage
+
+[NET]
+CLIENT_ADDRESS=INADDR_ANY
+MAX_CONNECTION_NUM=8192
+PORT=6789
+
+[OptimizeStage]
+NextStages=ExecuteStage
+ThreadId=SQLThreads
+
+[ParseStage]
+NextStages=OptimizeStage
+ThreadId=SQLThreads
+
+[PlanCacheStage]
+NextStages=ExecuteStage,ParseStage
+ThreadId=SQLThreads
+
+[QueryCacheStage]
+NextStages=PlanCacheStage
+ThreadId=SQLThreads
+
+[ResolveStage]
+NextStages=QueryCacheStage
+ThreadId=SQLThreads
+
+[SEDA_BASE]
+EventHistory=false
+MaxEventHistoryNum=100
+STAGES=SessionStage,ExecuteStage,OptimizeStage,ParseStage,ResolveStage,PlanCacheStage,QueryCacheStage,DefaultStorageStage,MemStorageStage,TimerStage,MetricsStage
+ThreadPools=SQLThre
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: init.cpp init_seda 63]>>(Re)Starting State: Pid: 4036 Time: Fri Apr 26 13:09:39 2024
+
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: init.cpp init_seda 64]>>The process Name is observer
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: seda_config.cpp init_event_history 209]>>Successfully init_event_history, EventHistory:0, MaxEventHops:100
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: seda_config.cpp init_stages 354]>>Stage SessionStage use threadpool DefaultThreads.
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: seda_config.cpp init_stages 354]>>Stage ExecuteStage use threadpool DefaultThreads.
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: seda_config.cpp init_stages 354]>>Stage OptimizeStage use threadpool DefaultThreads.
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: seda_config.cpp init_stages 354]>>Stage ParseStage use threadpool DefaultThreads.
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: seda_config.cpp init_stages 354]>>Stage ResolveStage use threadpool DefaultThreads.
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: seda_config.cpp init_stages 354]>>Stage PlanCacheStage use threadpool DefaultThreads.
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: seda_config.cpp init_stages 354]>>Stage QueryCacheStage use threadpool DefaultThreads.
+[2024-4-26 13:9:39 pid:4036 tid:79bc951f8640  INFO: thread_pool.cpp run_thread 258]>>threadid = 79bc951f8640, threadname = DefaultThreads
+
+[2024-4-26 13:9:39 pid:4036 tid:79bc961fa640  INFO: thread_pool.cpp run_thread 258]>>threadid = 79bc961fa640, threadname = IOThreads
+
+[2024-4-26 13:9:39 pid:4036 tid:79bc959f9640  INFO: thread_pool.cpp run_thread 258]>>threadid = 79bc959f9640, threadname = DefaultThreads
+
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: default_storage_stage.cpp set_properties 89]>>Use sys as system db
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: default_handler.cpp init 52]>>Default handler init with ./miniob success
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  WARNNING: default_handler.cpp create_db 74]>>Db already exists: sys
+[2024-4-26 13:9:39 pid:4036 tid:79bc981fe640  INFO: thread_pool.cpp run_thread 258]>>threadid = 79bc981fe640, threadname = SQLThreads
+
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: field_meta.cpp init 70]>>Init a field with name=__trx
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: field_meta.cpp init 70]>>Init a field with name=__trx
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: field_meta.cpp init 70]>>Init a field with name=id
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: field_meta.cpp init 70]>>Init a field with name=age
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: disk_buffer_pool.cpp open_file 108]>>Successfully open file ./miniob/db/sys/t.data.
+[2024-4-26 13:9:39 pid:4036 tid:79bc989ff640  INFO: thread_pool.cpp run_thread 258]>>threadid = 79bc989ff640, threadname = SQLThreads
+
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: disk_buffer_pool.cpp open_file 149]>>Successfully open ./miniob/db/sys/t.data. file_id=0, hdr_frame=0x79bc98ce6010
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: db.cpp open_all_tables 121]>>Open table: t, file: t.table
+[2024-4-26 13:9:39 pid:4036 tid:79bc979fd640  INFO: thread_pool.cpp run_thread 258]>>threadid = 79bc979fd640, threadname = SQLThreads
+
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: db.cpp open_all_tables 124]>>All table have been opened. num=1
+[2024-4-26 13:9:39 pid:4036 tid:79bc949f7640  INFO: thread_pool.cpp run_thread 258]>>threadid = 79bc949f7640, threadname = DefaultThreads
+
+[2024-4-26 13:9:39 pid:4036 tid:79bc969fb640  INFO: thread_pool.cpp run_thread 258]>>threadid = 79bc969fb640, threadname = IOThreads
+
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: default_storage_stage.cpp set_properties 113]>>Open system db success: sys
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: seda_config.cpp init_stages 354]>>Stage DefaultStorageStage use threadpool DefaultThreads.
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: seda_config.cpp init_stages 354]>>Stage MemStorageStage use threadpool DefaultThreads.
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: seda_config.cpp get_thread_pool 296]>>Not set thread_pool_id for TimerStage, use default threadpool DefaultThreads
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: seda_config.cpp init_stages 354]>>Stage TimerStage use threadpool DefaultThreads.
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: seda_config.cpp get_thread_pool 296]>>Not set thread_pool_id for MetricsStage, use default threadpool DefaultThreads
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: seda_config.cpp init_stages 354]>>Stage MetricsStage use threadpool DefaultThreads.
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: metrics_registry.cpp register_metric 37]>>Successfully register metric :DefaultStorageStage.query
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: metrics_registry.cpp register_metric 37]>>Successfully register metric :SessionStage.sql
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: init.cpp init 229]>>Successfully init utility
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: metrics_registry.cpp register_metric 37]>>Successfully register metric :SessionStage.readsocket
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: metrics_registry.cpp register_metric 37]>>Successfully register metric :SessionStage.writesocket
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: server.cpp start_tcp_server 333]>>Listen on port 6789
+[2024-4-26 13:9:39 pid:4036 tid:79bc99043740  INFO: server.cpp start_tcp_server 352]>>Observer start success
+[2024-4-26 13:9:39 pid:4036 tid:79bc971fc640  INFO: thread_pool.cpp run_thread 258]>>threadid = 79bc971fc640, threadname = IOThreads
+
+[2024-4-26 13:9:44 pid:4036 tid:79bc99043740  INFO: server.cpp accept 278]>>Accepted connection from 127.0.0.1:20205
+
+[2024-4-26 13:9:51 pid:4036 tid:79bc99043740  INFO: server.cpp recv 171]>>receive command(size=14): show tables;
+
+[2024-4-26 13:10:21 pid:4036 tid:79bc99043740  INFO: server.cpp recv 171]>>receive command(size=28): insert into t values(1,1);
+
+[2024-4-26 13:10:32 pid:4036 tid:79bc99043740  INFO: server.cpp recv 171]>>receive command(size=28): insert into t values(2,2);
+
+[2024-4-26 13:10:38 pid:4036 tid:79bc99043740  INFO: server.cpp recv 171]>>receive command(size=28): insert into t values(3,3);
+
+[2024-4-26 13:10:39 pid:4036 tid:79bc949f7640  INFO: log_reporter.cpp report 36]>>DefaultStorageStage.query:mean:0,tps:0.0666667
+[2024-4-26 13:10:39 pid:4036 tid:79bc949f7640  INFO: log_reporter.cpp report 36]>>SessionStage.readsocket:mean:0,tps:0.0666667
+[2024-4-26 13:10:39 pid:4036 tid:79bc949f7640  INFO: log_reporter.cpp report 36]>>SessionStage.sql:mean:0,tps:0.0666667
+[2024-4-26 13:10:39 pid:4036 tid:79bc949f7640  INFO: log_reporter.cpp report 36]>>SessionStage.writesocket:mean:0,tps:0.133333
+[2024-4-26 13:10:43 pid:4036 tid:79bc99043740  INFO: server.cpp recv 171]>>receive command(size=28): insert into t values(4,5);
+
+[2024-4-26 13:11:2 pid:4036 tid:79bc99043740  INFO: server.cpp recv 171]>>receive command(size=25): select count(*) from t;
+
+[2024-4-26 13:11:11 pid:4036 tid:79bc99043740  INFO: server.cpp recv 171]>>receive command(size=18): select * from t;
+
+[2024-4-26 13:11:39 pid:4036 tid:79bc951f8640  INFO: log_reporter.cpp report 36]>>DefaultStorageStage.query:mean:0,tps:0.0166667
+[2024-4-26 13:11:39 pid:4036 tid:79bc951f8640  INFO: log_reporter.cpp report 36]>>SessionStage.readsocket:mean:0,tps:0.05
+[2024-4-26 13:11:39 pid:4036 tid:79bc951f8640  INFO: log_reporter.cpp report 36]>>SessionStage.sql:mean:0,tps:0.05
+[2024-4-26 13:11:39 pid:4036 tid:79bc951f8640  INFO: log_reporter.cpp report 36]>>SessionStage.writesocket:mean:0,tps:0.1
+[2024-4-26 13:12:9 pid:4036 tid:79bc99043740  INFO: server.cpp recv 171]>>receive command(size=25): select count(*) from t;
+
+[2024-4-26 13:12:39 pid:4036 tid:79bc949f7640  INFO: log_reporter.cpp report 36]>>DefaultStorageStage.query:mean:0,tps:0
+[2024-4-26 13:12:39 pid:4036 tid:79bc949f7640  INFO: log_reporter.cpp report 36]>>SessionStage.readsocket:mean:0,tps:0.0166667
+[2024-4-26 13:12:39 pid:4036 tid:79bc949f7640  INFO: log_reporter.cpp report 36]>>SessionStage.sql:mean:0,tps:0.0166667
+[2024-4-26 13:12:39 pid:4036 tid:79bc949f7640  INFO: log_reporter.cpp report 36]>>SessionStage.writesocket:mean:0,tps:0.0333333
+[2024-4-26 13:12:39 pid:4036 tid:79bc777fe640  INFO: main.cpp quit_thread_func 137]>>Receive signal: 15
+[2024-4-26 13:12:39 pid:4036 tid:79bc777fe640  INFO: server.cpp shutdown 435]>>Server shutting down
+[2024-4-26 13:12:39 pid:4036 tid:79bc99043740  INFO: main.cpp main 168]>>Server stopped
+[2024-4-26 13:12:39 pid:4036 tid:79bc99043740  INFO: table.cpp sync 966]>>Sync table over. table=t
+[2024-4-26 13:12:39 pid:4036 tid:79bc99043740  INFO: db.cpp sync 147]>>Sync db over. db=sys
